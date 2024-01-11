@@ -17,10 +17,11 @@ const Home: React.FC = () => {
         method: "get",
         params: {
           cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
+          uxmode: "anf",
         },
       };
 
-      const data = await manager.showOtplessLoginPage(extras);
+      const data = await manager.startWithCallback(extras);
 
       if (data.data === null || data.data === undefined) {
         console.error(data.errorMessage);
