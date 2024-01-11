@@ -104,10 +104,13 @@ import OtplessSDK
 
 //add this inside of class
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-	if Otpless.sharedInstance.isOtplessDeeplink(url: url){
-	Otpless.sharedInstance.processOtplessDeeplink(url: url)
-    }
-	return true
+        if Otpless.sharedInstance.isOtplessDeeplink(url: url){
+        Otpless.sharedInstance.processOtplessDeeplink(url: url)
+        return true
+     }
+
+        super.application(app, open: url, options: options)
+        return true
 }
 ```
 
