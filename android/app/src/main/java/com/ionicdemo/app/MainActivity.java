@@ -1,4 +1,4 @@
-package com.ionicdemo.app;
+package com.ionic_demo.app;
 
 import com.getcapacitor.BridgeActivity;
 import com.otpless.ionic.OtplessPlugin;

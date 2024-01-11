@@ -3,6 +3,7 @@ import { IonPage } from "@ionic/react";
 import "./Home.css";
 import { OtplessManager } from "otpless-ionic";
 import "../pages/Home.css";
+import { platform } from "os";
 
 const Home: React.FC = () => {
   const [token, setMyToken] = useState("");
@@ -17,11 +18,11 @@ const Home: React.FC = () => {
         method: "get",
         params: {
           cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
-          uxmode: "anf",
+          login_uri: "com.ionicdemo.otpless", //update the same value in Androidmainfest.xml and info.plist
         },
       };
 
-      const data = await manager.startWithCallback(extras);
+      const data = await manager.showOtplessLoginPage(extras);
 
       if (data.data === null || data.data === undefined) {
         console.error(data.errorMessage);

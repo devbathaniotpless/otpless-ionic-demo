@@ -50,7 +50,7 @@
 		<dict>
 		<key>CFBundleURLSchemes</key> 
 		<array>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).otpless</string> 
+			<string>com.ionicdemo.otpless.otpless</string> <!-- Update the PRODUCT_BUNDLE_IDENTIFIER --> 
 		</array>
 		<key>CFBundleTypeRole</key>
 		<string>Editor</string>
