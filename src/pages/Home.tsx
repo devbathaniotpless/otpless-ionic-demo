@@ -3,6 +3,7 @@ import { IonPage } from "@ionic/react";
 import "./Home.css";
 import { OtplessManager } from "otpless-ionic";
 import "../pages/Home.css";
+import { platform } from "os";
 
 const Home: React.FC = () => {
   const [token, setMyToken] = useState("");
@@ -10,38 +11,40 @@ const Home: React.FC = () => {
   const updateString = (userToken: string) => {
     setMyToken(userToken);
   };
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const manager = new OtplessManager();
-        const extras = {
-          method: "get",
-          params: {
-            cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
-            crossButtonHidden: "true",
-          },
-        };
+  const openLoginPage = async () => {
+    try {
+      const manager = new OtplessManager();
+      const extras = {
+        method: "get",
+        params: {
+          cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
+          login_uri: "com.ionicdemo.otpless", //update the same value in Androidmainfest.xml and info.plist
+        },
+      };
 
-        const data = await manager.showOtplessLoginPage(extras);
+      const data = await manager.showOtplessLoginPage(extras);
 
-        if (data.data === null || data.data === undefined) {
-          console.error(data.errorMessage);
-        } else {
-          updateString(data.data.token);
-          // TODO: Add your logic here
-          // For example, setRedirectToHome(true) to redirect to the home page
-        }
-      } catch (error) {
-        console.error("Error:", error);
+      if (data.data === null || data.data === undefined) {
+        console.error(data.errorMessage);
+      } else {
+        updateString(data.data.token);
+        // TODO: Add your logic here
+        // For example, setRedirectToHome(true) to redirect to the home page
       }
-    };
-    fetchData();
-  }, []);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <IonPage>
-      <div className="row">
-        <div className="tokentitleTextstyle">Token : </div>
-        <div className="tokenTextStyle"> {token}</div>
+      <div className="column">
+        <div className="row">
+          <div className="tokentitleTextstyle">Token : </div>
+          <div className="tokenTextStyle"> {token}</div>
+        </div>
+        <button onClick={openLoginPage} className="button">
+          Login
+        </button>
       </div>
     </IonPage>
   );

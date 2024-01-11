@@ -26,7 +26,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="${applicationId}.otpless" android:host="otpless"/>
+                <data android:scheme="com.ionicdemo.otpless.otpless" android:host="otpless"/> <!-- Update the Application Id--> 
             </intent-filter>
 
         </activity>

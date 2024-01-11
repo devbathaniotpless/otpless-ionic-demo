@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">otpless-ionic-demo</string>
     <string name="title_activity_main">otpless-ionic-demo</string>
-    <string name="package_name">com.ionicdemo.app</string>
-    <string name="custom_url_scheme">com.ionicdemo.app</string>
+    <string name="package_name">com.ionic_demo.app</string>
+    <string name="custom_url_scheme">com.ionic_demo.app</string>
 </resources>
