@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.tokentitleTextstyle {
+  color: white;
+  font-size: 16px;
+}
+.tokenTextStyle {
+  color: white;
+  font-size: 14px;
+}

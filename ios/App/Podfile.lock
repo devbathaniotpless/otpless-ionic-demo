@@ -1,0 +1,35 @@
+PODS:
+  - Capacitor (5.6.0):
+    - CapacitorCordova
+  - CapacitorCordova (5.6.0)
+  - OtplessIonic (0.1.1):
+    - Capacitor
+    - OtplessSDK (= 2.0.1)
+  - OtplessSDK (2.0.1)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - OtplessIonic (from `../../node_modules/otpless-ionic`)
+
+SPEC REPOS:
+  trunk:
+    - OtplessSDK
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  OtplessIonic:
+    :path: "../../node_modules/otpless-ionic"
+
+SPEC CHECKSUMS:
+  Capacitor: ebfc16cdb8116d04c101686b080342872da42d43
+  CapacitorCordova: 931b48fcdbc9bc985fc2f16cec9f77c794a27729
+  OtplessIonic: 0bbf514b93845249ba5960dbfb7e2e5daf564841
+  OtplessSDK: b8bbd2e85bee4ebdadb7f5503dc8d596067cd84b
+
+PODFILE CHECKSUM: 3e636631a9487150ddc1e523628bdd45425777d5
+
+COCOAPODS: 1.14.3
