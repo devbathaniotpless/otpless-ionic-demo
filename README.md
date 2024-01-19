@@ -103,12 +103,12 @@ pod install
 import OtplessSDK
 
 //add this inside of class
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool { 
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if Otpless.sharedInstance.isOtplessDeeplink(url: url){
         Otpless.sharedInstance.processOtplessDeeplink(url: url)
-        return true 
+        return true
      }
-        
+
         super.application(app, open: url, options: options)
         return true
    }
@@ -125,9 +125,15 @@ import { OtplessManager } from "otpless-ionic";
 - Add this code to handle callback from OTPLESS SDK.
 
 ```tsx
+const manager = new OtplessManager();
+// This code will be used to detect the whatsapp installed status in users device
+// If you are using WHATSAPP login then its reqiured to add this code to hide the OTPless functionality
+const isWhatsappInstalled = async () => {
+  const hasWhatsapp = await manager.isWhatsappInstalled();
+  console.log(hasWhatsapp);
+};
 const openLoginPage = async () => {
   try {
-    const manager = new OtplessManager();
     const extras = {
       method: "get",
       params: {
@@ -135,7 +141,7 @@ const openLoginPage = async () => {
         uxmode: "anf",
       },
     };
-
+    isWhatsappInstalled();
     const data = await manager.startWithCallback(extras);
 
     if (data.data === null || data.data === undefined) {
