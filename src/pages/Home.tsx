@@ -10,16 +10,22 @@ const Home: React.FC = () => {
   const updateString = (userToken: string) => {
     setMyToken(userToken);
   };
+  const manager = new OtplessManager();
+  // This code will be used to detect the whatsapp installed status in users device
+  // If you are using WHATSAPP login then its reqiured to add this code to hide the OTPless functionality
+  const isWhatsappInstalled = async () => {
+    const hasWhatsapp = await manager.isWhatsappInstalled();
+    console.log(hasWhatsapp);
+  };
   const openLoginPage = async () => {
     try {
-      const manager = new OtplessManager();
       const extras = {
         method: "get",
         params: {
           cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
         },
       };
-
+      isWhatsappInstalled();
       const data = await manager.showOtplessLoginPage(extras);
 
       if (data.data === null || data.data === undefined) {
