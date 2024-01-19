@@ -123,9 +123,15 @@ import { OtplessManager } from "otpless-ionic";
 - Add this code to handle callback from OTPLESS SDK.
 
 ```tsx
+const manager = new OtplessManager();
+// This code will be used to detect the whatsapp installed status in users device
+// If you are using WHATSAPP login then its reqiured to add this code to hide the OTPless functionality
+const isWhatsappInstalled = async () => {
+  const hasWhatsapp = await manager.isWhatsappInstalled();
+  console.log(hasWhatsapp);
+};
 const openLoginPage = async () => {
   try {
-    const manager = new OtplessManager();
     const extras = {
       method: "get",
       params: {
@@ -133,7 +139,7 @@ const openLoginPage = async () => {
         login_uri: "com.ionicdemo.otpless", //update the same value in Androidmainfest.xml and info.plist
       },
     };
-
+    isWhatsappInstalled();
     const data = await manager.showOtplessLoginPage(extras);
 
     if (data.data === null || data.data === undefined) {
