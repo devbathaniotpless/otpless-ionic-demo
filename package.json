@@ -20,7 +20,7 @@
     "@types/react-router-dom": "^5.1.7",
     "history": "^4.9.0",
     "ionicons": "^7.0.0",
-    "otpless-ionic": "^0.1.1",
+    "otpless-ionic": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.2.0",
