@@ -137,6 +137,7 @@ const openLoginPage = async () => {
       params: {
         cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
         login_uri: "com.ionicdemo.otpless", //update the same value in Androidmainfest.xml and info.plist
+        appId: "AX5H8YDKQ2CNH6YR6M78", //Add your own appId value provided in the docs otpless.com/platforms/ionic
       },
     };
     isWhatsappInstalled();
