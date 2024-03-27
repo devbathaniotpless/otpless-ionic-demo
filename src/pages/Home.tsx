@@ -23,6 +23,7 @@ const Home: React.FC = () => {
         method: "get",
         params: {
           cid: "HRIRBIIKXMKEOTDDA8VV4HP2V24454X8", //Add your own CID value provided in the docs otpless.com/platforms/ionic
+          appId: "AX5H8YDKQ2CNH6YR6M78", //Add your own appId value provided in the docs otpless.com/platforms/ionic
         },
       };
       isWhatsappInstalled();
